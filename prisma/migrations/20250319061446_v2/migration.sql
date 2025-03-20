@@ -1,7 +1,7 @@
 CREATE TABLE "Student" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "dateOfBirth" TIMESTAMP NOT NULL,
+    "dateOfBirth" TEXT NOT NULL,
     "aadharNumber" TEXT NOT NULL UNIQUE,
     "proctorId" TEXT NOT NULL,
     
@@ -20,8 +20,8 @@ CREATE TABLE "Professor" (
 CREATE TABLE "LibraryMembership" (
     "id" TEXT NOT NULL,
     "studentId" TEXT NOT NULL UNIQUE,
-    "issueDate" TIMESTAMP NOT NULL,
-    "expiryDate" TIMESTAMP NOT NULL,
+    "issueDate" TEXT NOT NULL,
+    "expiryDate" TEXT NOT NULL,
 
     CONSTRAINT "LibraryMembership_pkey" PRIMARY KEY ("id"),
     CONSTRAINT "LibraryMembership_studentId_fkey" FOREIGN KEY ("studentId") REFERENCES "Student" ("id") ON DELETE CASCADE
